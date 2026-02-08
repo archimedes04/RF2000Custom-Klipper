@@ -205,6 +205,10 @@ class LoadCellProbe:
     def get_probe_params(self, gcmd=None):
         return self._params
 
+    def get_lift_speed(self, gcmd=None):
+        if gcmd is not None:
+            return self.get_probe_params(gcmd)['lift_speed']
+        return self.lift_speed
     def get_offsets(self):
         return 0, 0, 0
 
